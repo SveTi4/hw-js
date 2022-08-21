@@ -53,12 +53,12 @@
   function PostES5(authorName, description) {
     this.authorName = authorName;
     this.description = description;
-    this.dateTime = new Date;
+    this.dateTime = new Date();
   }
 
-  PostES5.prototype.editDescription = function(newDescription) {
+  PostES5.prototype.editDescription = function (newDescription) {
     this.description = newDescription;
-    this.dateTime = new Date;
+    this.dateTime = new Date();
   }
 
   function AttachedPostES5(authorName, description) {
@@ -69,12 +69,12 @@
   AttachedPostES5.prototype = Object.create(PostES5.prototype);
   AttachedPostES5.prototype.constructor = AttachedPostES5;
 
-  AttachedPostES5.prototype.makeTextHighlighted = function(highlightedStatus) {
-    if (highlightedStatus !== true && highlightedStatus !== false) {
+  AttachedPostES5.prototype.makeTextHighlighted = function (highlightedStatus) {
+    if (typeof highlightedStatus === "boolean") {
       throw TypeError('Invalid status');
     }
     this.highlighted = highlightedStatus;
-    this.dateTime = new Date;
+    this.dateTime = new Date();
   }
 
   const postES5 = new PostES5('Мартино', 'Сегодня был град');
@@ -86,12 +86,12 @@
     constructor(authorName, description) {
       this.authorName = authorName;
       this.description = description;
-      this.dateTime = new Date;  
+      this.dateTime = new Date();  
     }
 
     editDescription(newDescription) {
       this.description = newDescription;
-      this.dateTime = new Date;
+      this.dateTime = new Date();
     }
   }
   
@@ -102,11 +102,11 @@
     }
 
     makeTextHighlighted(highlightedStatus) {
-      if (highlightedStatus !== true && highlightedStatus !== false) {
+      if (typeof highlightedStatus === "boolean") {
         throw TypeError('Invalid status');
       }
       this.highlighted = highlightedStatus;
-      this.dateTime = new Date;
+      this.dateTime = new Date();
     }   
   }
 

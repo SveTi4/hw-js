@@ -42,7 +42,7 @@
     if (number >= 0 && number < 1000 && Number.isInteger(number)) {
       categories.units = number % 10;
       categories.dozens = Math.trunc(number % 100 / 10);
-      categoriesbg.hundreds = Math.trunc((number % 1000) / 100);
+      categories.hundreds = Math.trunc((number % 1000) / 100);
     } else {
       console.error('Упс...что-то пошло не так');
     }
