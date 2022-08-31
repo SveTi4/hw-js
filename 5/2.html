@@ -34,7 +34,7 @@
   свойство classList у элементов.
    */
   document.querySelectorAll(".dropdown-item")
-  .forEach(el => el.classList.add("super-dropdown"));
+    .forEach(el => el.classList.add("super-dropdown"));
 
   /*
   2. У элемента с классом btn необходимо убрать класс "btn-secondary", если он
@@ -42,14 +42,14 @@
   не было.
    */
   document.querySelectorAll(".btn")
-  .forEach(el => el.classList.toggle("btn-secondary"));
+    .forEach(el => el.classList.toggle("btn-secondary"));
 
   /*
   3. Необходимо удалить класс "dropdown-menu" у элемента, у которого
   присутствует класс "menu".
    */
   document.querySelectorAll(".menu")
-  .forEach(el => el.classList.remove("dropdown-menu"));
+    .forEach(el => el.classList.remove("dropdown-menu"));
 
   /*
   4. Используя метод insertAdjacentHTML добавьте после div'a с классом
@@ -57,7 +57,7 @@
     <a href="#">link</a>
    */
   document.querySelector("div.dropdown")
-  .insertAdjacentHTML("afterend", '<a href="#">link</a>');
+    .insertAdjacentHTML("afterend", '<a href="#">link</a>');
 
   /*
   5. У элемента с id "dropdownMenuButton" замените id на "superDropdown".
@@ -69,7 +69,7 @@
   атрибут "aria-labelledby" равный "dropdownMenuButton" используя dataset.
    */
   document.querySelector('[aria-labelledby="dropdownMenuButton"]')
-  .dataset.dd = "3";
+    .dataset.dd = "3";
 
   /*
   7. Удалите атрибут type у элемента с классом "dropdown-toggle".
@@ -83,7 +83,7 @@
   Атрибут "class" содержит значение "btn btn-secondary dropdown-toggle"
    */
   const attributesList = document.querySelector(".dropdown-toggle.btn")
-  .attributes;
+    .attributes;
   for(const atr of attributesList) {
     console.log(`Атрибут "${atr.name}" содержит значение "${atr.value}"`);
   }

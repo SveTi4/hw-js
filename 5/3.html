@@ -64,7 +64,7 @@
   2. Необходимо вывести сообщение в консоль "страница загрузилась", когда все
   ресурсы страницы будут загружены.
   */
-  window.onload = () => console.log("страница загрузилась");
+  window.addEventListener('load', () => console.log("страница загрузилась"));
 
   /*
   3. При клике на какой-либо тег на странице в консоль должно выводиться
@@ -78,7 +78,7 @@
   document.body.addEventListener('click', event => {
     const clickTarget = event.target.tagName.toLowerCase();
     let flag = "отсутствует"
-    if(event.target.className === "super_element") {
+    if(event.target.classList.contains("super_element")) {
       flag = "присутствует";
     }
     console.log(`Класс "super_element" ${flag} в элементе "${clickTarget}"`);
