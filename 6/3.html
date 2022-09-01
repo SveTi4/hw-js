@@ -41,7 +41,7 @@
 
   document.querySelector(".stars_container")
     .addEventListener('mouseover', event => {
-      if(event.target.tagName === "I") {
+      if (event.target.classList.contains("fas")) {
         let starId = 0;
         event.target.classList.add("golden");
         while(starEls[starId] !== event.target) {
@@ -60,7 +60,7 @@
   задания должны быть удалены.
   */
    document.addEventListener('mouseover', event => {
-    if(!event.target.classList.contains("fas") 
+    if (!event.target.classList.contains("fas") 
       && !event.target.classList.contains("stars_container")) {
         starEls.forEach(el => el.classList.remove("golden"));
     }

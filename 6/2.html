@@ -65,8 +65,10 @@
   должно моментально отображаться в span. То есть при печати в input'е тег span
   также должен меняться.
   */
+  const spanEl = document.querySelector("span");
+
   document.querySelector("input#from").addEventListener('input', event => {
-    document.querySelector("span").textContent = event.target.value;
+    spanEl.textContent = event.target.value;
   });
 
   /*
@@ -75,10 +77,11 @@
   1) добавить два класса: animate__animated и animate__fadeInLeftBig
   2) поставить данному элементу стиль visibility в значение 'visible'.
    */
+  const messageEl = document.querySelector(".message");
+
   document.querySelector(".messageBtn").addEventListener('click', event => {
-    document.querySelector(".message").classList.add("animate__animated", 
-      "animate__fadeInLeftBig");
-    document.querySelector(".message").style.visibility = "visible";
+    messageEl.classList.add("animate__animated", "animate__fadeInLeftBig");
+    messageEl.style.visibility = "visible";
   });
 
   /*
@@ -99,7 +102,7 @@
   Странно то, что и с аргументом event и без него всё работает.
   */
   const validate = event => {
-    if(event.target.value === "") {
+    if (event.target.value === "") {
       event.target.classList.add("error");
       event.preventDefault();
     } else {
@@ -109,7 +112,6 @@
 
   const formInputEls = document.querySelectorAll(".form-control");
 
-  formInputEls.forEach(el => el.addEventListener("focus", validate));
   formInputEls.forEach(el => el.addEventListener("input", validate));
   
   document.querySelector("form button").addEventListener('click', event => {
