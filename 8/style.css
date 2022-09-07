@@ -60,7 +60,52 @@ body {
     position: relative;
 }
 
-.cartIconWrap span {
+.cart-items-box {
+    position: absolute;
+    margin-top: 10px;
+    padding: 10px;
+    right: 0;
+    top: 20px;
+    min-height: 100px;
+    width: 550px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.invisibility {
+    display: none;
+}
+.cart_bottom-border {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(176, 176, 176, 0.699);
+}
+.cart-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 500;
+}
+.cart-header__item {
+    flex-grow: 1;
+    max-width: 25%;
+}
+.total-price {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.cart-product {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.cart-product__item {
+    width: 25%;
+}
+
+.cartIconWrap span.cart-count {
     display: inline-block;
     width: 19px;
     height: 19px;
