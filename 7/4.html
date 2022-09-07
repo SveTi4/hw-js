@@ -19,13 +19,11 @@
    *
    * @param {number} width - Rectangle width
    * @param {number} height - Rectangle height
-   * @param {text} [border] - Rectangle border
    * @return {Rectangle}
    */
-  function Rectangle(width, height, border, background) {
+  function Rectangle(width, height, border) {
     this.width = width ?? "100";
     this.height = height ?? "100";
-    this.border = border ?? "1px black solid";
     return this.writeRec();
   }
 
@@ -33,13 +31,12 @@
     const rectangleEl = document.createElement("div");
     rectangleEl.style.width = `${this.width}px`;
     rectangleEl.style.height = `${this.height}px`;
-    rectangleEl.style.border = `${this.border}`;
-    document.body.insertAdjacentElement("beforeend", rectangleEl)
-  }
+    document.body.insertAdjacentElement("beforeend", rectangleEl);
+  };
 
   Rectangle.prototype.getArea = function () {
     return this.width * this.height;
-  }
+  };
 
   const r = new Rectangle(10, 20);
   console.log(r.width); // 10
